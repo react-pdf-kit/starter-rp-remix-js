@@ -13,15 +13,9 @@ export const AppPdfViewer = (props) => {
       src="https://cdn.codewithmosh.com/image/upload/v1721763853/guides/web-roadmap.pdf"
       {...providerProps}
     >
-      {showToolbar ? (
-        <RPLayout toolbar={true} {...defaultLayoutProps}>
-          <RPPages />
-        </RPLayout>
-      ) : (
-        <div style={{ width: "100%", height: "550px" }}>
-          <RPPages />
-        </div>
-      )}
+      <RPLayout toolbar={showToolbar} {...defaultLayoutProps}>
+        <RPPages />
+      </RPLayout>
     </RPProvider>
   );
 };
