@@ -18,7 +18,7 @@ Welcome to the React PDF Starter Toolkit! This repository provides a comprehensi
 1. **Clone the Repository**: If you haven't already, clone the repository and navigate into the project directory.
 
    ```bash
-   git clone https://github.com/pdf-viewer-react/starter-rp-remix-js.git
+   git clone https://github.com/react-pdf-kit/starter-rp-remix-js.git
    cd starter-rp-remix-js
    ```
 
@@ -59,7 +59,7 @@ Once the example project is running, you can explore the source code to see how 
 1.  **Import the component**: Import the desired React PDF component into your codes
 
 ```tsx
-import { RPProvider, RPDefaultLayout, RPPages } from "@pdf-viewer/react";
+import { RPProvider, RPLayout, RPPages } from "@react-pdf-kit/viewer";
 
 export const AppPdfViewer = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -70,15 +70,9 @@ export const AppPdfViewer = (props) => {
       src="https://cdn.codewithmosh.com/image/upload/v1721763853/guides/web-roadmap.pdf"
       {...providerProps}
     >
-      {showToolbar ? (
-        <RPDefaultLayout {...defaultLayoutProps}>
-          <RPPages />
-        </RPDefaultLayout>
-      ) : (
-        <div style={{ width: "100%", height: "550px" }}>
-          <RPPages />
-        </div>
-      )}
+      <RPLayout toolbar={showToolbar} {...defaultLayoutProps}>
+        <RPPages />
+      </RPLayout>
     </RPProvider>
   );
 };
@@ -88,7 +82,7 @@ export const AppPdfViewer = (props) => {
 
 ```tsx
 import { ClientOnly } from "remix-utils/client-only";
-import { RPConfig } from "@pdf-viewer/react";
+import { RPConfig } from "@react-pdf-kit/viewer";
 import { AppPdfViewer } from "../components/AppPDFViewer";
 
 export default function Index() {
