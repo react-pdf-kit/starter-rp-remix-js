@@ -1,4 +1,4 @@
-# React PDF Kit Starter Toolkit in Remix and TypeScript
+# React PDF Kit Starter Toolkit in Remix and JavaScript
 
 [![Open example in codesandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/github/react-pdf-kit/starter-rp-remix-js/main)
 
